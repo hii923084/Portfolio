@@ -5,157 +5,224 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>RK.S.S. Jagadish Ramayanam | Portfolio</title>
 <style>
-  /* Reset & base */
-  * {
+  /* Reset */
+  *, *::before, *::after {
     box-sizing: border-box;
   }
   body {
-    margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f9f9f9; color: #222;
-    transition: background 0.3s, color 0.3s;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #eee;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+    transition: background-color 0.4s ease, color 0.4s ease;
   }
   a {
-    color: #0077cc;
+    color: #6ab7ff;
     text-decoration: none;
+    transition: color 0.3s ease;
   }
-  a:hover {
+  a:hover, a:focus {
+    color: #90caf9;
     text-decoration: underline;
   }
-  /* Dark mode */
-  body.dark {
-    background: #121212;
-    color: #eee;
+
+  /* Light mode */
+  body.light {
+    background-color: #fefefe;
+    color: #222;
   }
-  body.dark a {
-    color: #66aaff;
+  body.light a {
+    color: #0077cc;
   }
+  body.light a:hover, body.light a:focus {
+    color: #005fa3;
+  }
+
   /* Container */
   .container {
     max-width: 900px;
-    margin: auto;
-    padding: 1.2rem 1rem 3rem;
+    width: 100%;
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.7);
+    padding: 2rem 3rem 3rem;
+    transition: background-color 0.4s ease;
   }
+  body.light .container {
+    background-color: #ffffff;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+  }
+
+  /* Header */
   header {
     text-align: center;
-    margin-bottom: 1.5rem;
-  }
-  header h1 {
-    margin-bottom: 0.1rem;
-    font-size: 2.5rem;
-    font-weight: 700;
-  }
-  header p {
-    margin-top: 0; 
-    font-size: 1.1rem;
-    color: #555;
-  }
-  body.dark header p {
-    color: #aaa;
-  }
-  /* Dark/Light toggle */
-  .toggle-container {
-    text-align: right;
-    margin-bottom: 1rem;
-  }
-  .toggle-container button {
-    cursor: pointer;
-    background: none;
-    border: 2px solid #0077cc;
-    color: #0077cc;
-    padding: 0.3rem 0.8rem;
-    border-radius: 6px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-  }
-  .toggle-container button:hover {
-    background: #0077cc;
-    color: white;
-  }
-  /* Sections */
-  section {
     margin-bottom: 2rem;
   }
+  header h1 {
+    font-size: 2.75rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+  header p {
+    font-size: 1.2rem;
+    color: #aaa;
+  }
+  body.light header p {
+    color: #555;
+  }
+
+  /* Toggle Button */
+  .toggle-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1.5rem;
+  }
+  button#theme-toggle {
+    background-color: transparent;
+    border: 2px solid #6ab7ff;
+    color: #6ab7ff;
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  button#theme-toggle:hover,
+  button#theme-toggle:focus {
+    background-color: #6ab7ff;
+    color: #121212;
+    outline: none;
+  }
+  body.light button#theme-toggle {
+    border-color: #0077cc;
+    color: #0077cc;
+  }
+  body.light button#theme-toggle:hover,
+  body.light button#theme-toggle:focus {
+    background-color: #0077cc;
+    color: #fff;
+  }
+
+  /* Sections */
+  section {
+    margin-bottom: 2.5rem;
+  }
   h2 {
-    border-bottom: 3px solid #0077cc;
-    padding-bottom: 0.25rem;
-    margin-bottom: 0.8rem;
+    font-size: 1.9rem;
+    border-bottom: 3px solid #6ab7ff;
+    padding-bottom: 0.4rem;
+    margin-bottom: 1.2rem;
   }
-  body.dark h2 {
-    border-color: #66aaff;
+  body.light h2 {
+    border-color: #0077cc;
   }
+
   /* Lists */
   ul {
-    list-style: none;
+    list-style-type: none;
     padding-left: 0;
   }
   li {
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
   }
-  /* Contact & Social */
-  .social-links {
-    margin-top: 0.5rem;
-    display: flex;
-    gap: 1.2rem;
+  strong {
+    color: #90caf9;
   }
-  .social-links a svg {
-    width: 28px;
-    height: 28px;
-    fill: #0077cc;
-    transition: fill 0.3s ease;
+  body.light strong {
+    color: #0077cc;
   }
-  .social-links a:hover svg {
-    fill: #005fa3;
+
+  /* Experience & Projects */
+  .experience-item, .project, .certification, .achievement-item {
+    background-color: #2a2a2a;
+    padding: 1.3rem 1.6rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    transition: background-color 0.4s ease, box-shadow 0.3s ease;
   }
-  body.dark .social-links a svg {
-    fill: #66aaff;
+  body.light .experience-item,
+  body.light .project,
+  body.light .certification,
+  body.light .achievement-item {
+    background-color: #f7f9fc;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
   }
-  body.dark .social-links a:hover svg {
-    fill: #99cfff;
+  .experience-item + .experience-item,
+  .project + .project,
+  .certification + .certification {
+    margin-top: 1rem;
   }
-  /* Resume Button */
-  .resume-btn {
-    display: inline-block;
-    margin-top: 0.5rem;
-    background-color: #0077cc;
-    color: white;
-    padding: 0.5rem 1.2rem;
-    border-radius: 6px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-  }
-  .resume-btn:hover {
-    background-color: #005fa3;
-  }
-  /* Skill & Experience grids */
-  .grid-two {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
-    gap: 1.6rem;
-  }
-  /* Project & Certifications style */
   .project, .certification {
-    background: #e6f0ff;
-    border-radius: 8px;
-    padding: 1rem 1.2rem;
-    box-shadow: 1px 1px 8px rgba(0,0,0,0.1);
-    transition: background 0.3s ease;
-  }
-  body.dark .project, body.dark .certification {
-    background: #222f44;
-    box-shadow: 1px 1px 12px rgba(255,255,255,0.1);
-  }
-  .project h3, .certification h3 {
-    margin-top: 0;
-  }
-  /* Achievement list style */
-  .achievement-item {
     margin-bottom: 1rem;
   }
+  .experience-item h3,
+  .project h3,
+  .certification h3 {
+    margin-top: 0;
+    margin-bottom: 0.6rem;
+    color: #90caf9;
+  }
+  body.light .experience-item h3,
+  body.light .project h3,
+  body.light .certification h3 {
+    color: #0077cc;
+  }
+  em {
+    color: #bbb;
+  }
+  body.light em {
+    color: #555;
+  }
+
+  /* Grid for projects and certifications */
+  .grid-two {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.6rem;
+  }
+
+  /* Social links */
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 0.6rem;
+  }
+  .social-links a {
+    display: inline-block;
+  }
+  .social-links svg {
+    width: 30px;
+    height: 30px;
+    fill: #6ab7ff;
+    transition: fill 0.3s ease;
+  }
+  .social-links a:hover svg,
+  .social-links a:focus svg {
+    fill: #90caf9;
+  }
+  body.light .social-links svg {
+    fill: #0077cc;
+  }
+  body.light .social-links a:hover svg,
+  body.light .social-links a:focus svg {
+    fill: #005fa3;
+  }
+
   /* Responsive */
   @media (max-width: 600px) {
     header h1 {
       font-size: 2rem;
+    }
+    .container {
+      padding: 1.5rem 1.5rem 2.5rem;
     }
   }
 </style>
@@ -164,9 +231,9 @@
 
 <div class="container">
   <div class="toggle-container">
-    <button id="theme-toggle" aria-label="Toggle Dark Mode">Toggle Dark Mode</button>
+    <button id="theme-toggle" aria-label="Toggle Dark/Light Mode">Toggle Light Mode</button>
   </div>
-  
+
   <header>
     <h1>RK.S.S. Jagadish Ramayanam</h1>
     <p>Cybersecurity Enthusiast | Vulnerability Assessment & Penetration Testing Intern</p>
@@ -201,8 +268,8 @@
       <h3>VAPT Intern — Andhra Pradesh Technology Services</h3>
       <p><em>May 2025 - Present</em></p>
       <ul>
-        <li>Perform vulnerability assessments and penetration testing on various client applications.</li>
-        <li>Assist in compliance auditing and report generation for security posture improvements.</li>
+        <li>Perform vulnerability scanning and security assessments for government web applications.</li>
+        <li>Assist in developing compliance audit documentation and implementation strategies.</li>
       </ul>
     </div>
   </section>
@@ -211,59 +278,34 @@
     <h2>Projects</h2>
     <div class="grid-two">
       <div class="project">
-        <h3>Scanhere4u</h3>
-        <p>Designed and implemented "Scanhere4u," an automated penetration testing tool for web and network security assessments.</p>
-        <p>Built the framework using Node.js and API integration to streamline security testing workflows.</p>
-        <p>Automated report generation to provide actionable insights and remediation strategies for detected vulnerabilities.</p>
+        <h3>Web-Based Attack Surface Management Tool</h3>
+        <p>Designed a scalable tool incorporating network and port scanning, service detection, and vulnerability analysis using signature and behavior-based detection methods. Integrated OWASP ZAP proxy for automated scanning.</p>
       </div>
       <div class="project">
-        <h3>OpenVPN Service using AWS Marketplace</h3>
-        <p>Deployed and configured an OpenVPN service using AWS Marketplace as part of a cloud computing project.</p>
-        <p>Secured network access and enhanced reliability by monitoring user authentication and activity logs.</p>
+        <h3>Secure Screenshot Capture & Storage System</h3>
+        <p>Developed a client-server solution that captures encrypted screenshots from client machines and stores them in organized directories by IP address for forensic and monitoring purposes.</p>
       </div>
     </div>
   </section>
 
   <section id="certifications">
     <h2>Certifications</h2>
-    <div class="grid-two">
-      <div class="certification">
-        <h3>APIsec Certified Practitioner (ACP)</h3>
-        <p>Certified in API security best practices and penetration testing.</p>
-      <div class="certification">
-        <h3>Red Hat Certified System Administrator (RHCSA) Training</h3>
-      </div>
-      <div class="certification">
-        <h3>Networking and Security Fundamentals</h3>
-        <p>EC-Council</p>
-      </div>
-      <div class="certification">
-        <h3>Vulnerability Analysis and Management Basics</h3>
-        <p>EC-Council</p>
-      </div>
-      <div class="certification">
-        <h3>Linux Network Administration</h3>
-        <p>EC-Council</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="achievements">
-    <h2>Achievements</h2>
-    <div class="achievement-item">
-      <strong>2nd place in HackathonX Semi-Finals (AP & Telangana region), organized by NCSRC</strong>
-      <p>Represented Team PyCODE and showcased practical cybersecurity expertise in a real-world challenge.</p>
+    <div class="certification">
+      <h3>NPTEL Certification in Cybersecurity</h3>
+      <p>Completed an online course covering fundamentals of cybersecurity, threat models, and defensive techniques.</p>
     </div>
   </section>
 
   <section id="contact">
-    <h2>Find me on</h2>
-    <div class="social-links">
-      <a href="https://github.com/hii923084" aria-label="GitHub" target="_blank" rel="noopener noreferrer" title="GitHub">
-        <svg viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.373 0 12c0 5.303 3.438 9.8 8.205 11.387.6.112.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.388-1.333-1.757-1.333-1.757-1.09-.744.083-.729.083-.729 1.205.086 1.84 1.236 1.84 1.236 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.304.76-1.604-2.665-.3-5.466-1.334-5.466-5.933 0-1.312.47-2.382 1.236-3.22-.123-.302-.536-1.52.117-3.176 0 0 1.008-.322 3.3 1.23a11.48 11.48 0 013.003-.403c1.018.005 2.042.138 3.003.403 2.29-1.553 3.296-1.23 3.296-1.23.655 1.656.243 2.874.12 3.176.77.838 1.236 1.908 1.236 3.22 0 4.61-2.807 5.63-5.48 5.922.43.37.823 1.1.823 2.222 0 1.606-.015 2.898-.015 3.292 0 .32.216.694.824.576C20.565 21.796 24 17.297 24 12c0-6.627-5.373-12-12-12z"/></svg>
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:ramayanamjagadish@gmail.com">ramayanamjagadish@gmail.com</a></p>
+    <p>Phone: <a href="tel:+919553458347">+91 95534 58347</a></p>
+    <div class="social-links" aria-label="Social media links">
+      <a href="https://linkedin.com/in/jagadishramayanam" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M4.98 3.5C3.33 3.5 2 4.84 2 6.5c0 1.65 1.33 3 2.98 3 1.64 0 3-1.35 3-3 0-1.66-1.36-3-3-3zM2 8.75h6v12H2v-12zm7.5 0h5.75v1.6h.08c.8-1.5 2.76-3.1 5.68-3.1 6.07 0 7.2 4 7.2 9.25v10.25h-6v-9.4c0-2.25-.04-5.15-3.14-5.15-3.14 0-3.62 2.44-3.62 4.96v9.6h-6v-12z"/></svg>
       </a>
-      <a href="https://www.linkedin.com/in/jagadish-ramayanam-310343266/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.024-3.037-1.85-3.037-1.852 0-2.135 1.445-2.135 2.939v5.667h-3.554V9h3.414v1.561h.05c.476-.9 1.637-1.85 3.37-1.85 3.6 0 4.268 2.368 4.268 5.455v6.286zM5.337 7.433a2.07 2.07 0 11.001-4.139 2.07 2.07 0 01-.001 4.139zM6.818 20.452H3.853V9h2.965v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.727v20.545C0 23.227.792 24 1.771 24h20.451C23.205 24 24 23.227 24 22.273V1.727C24 .774 23.205 0 22.225 0z"/></svg>
+      <a href="https://github.com/jagadishramayanam" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.16 6.84 9.49.5.09.68-.21.68-.48 0-.24-.01-1.04-.02-1.89-2.78.6-3.37-1.34-3.37-1.34-.45-1.14-1.1-1.44-1.1-1.44-.9-.62.07-.6.07-.6 1 .07 1.53 1.04 1.53 1.04.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.93 0-1.09.39-1.99 1.03-2.7-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.59 9.59 0 0112 6.8c.85.004 1.7.11 2.5.32 1.9-1.3 2.74-1.02 2.74-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.7 0 3.82-2.33 4.68-4.56 4.93.36.31.68.93.68 1.88 0 1.36-.01 2.46-.01 2.79 0 .27.18.58.69.48A10.02 10.02 0 0022 12c0-5.52-4.48-10-10-10z"/></svg>
       </a>
     </div>
   </section>
@@ -271,8 +313,21 @@
 
 <script>
   const toggleBtn = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  // Default is dark, so start with no class or explicitly add 'dark'
+  if (!body.classList.contains('light')) {
+    body.classList.remove('light');
+  }
+
   toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
+    if (body.classList.contains('light')) {
+      body.classList.remove('light');
+      toggleBtn.textContent = 'Toggle Light Mode';
+    } else {
+      body.classList.add('light');
+      toggleBtn.textContent = 'Toggle Dark Mode';
+    }
   });
 </script>
 
