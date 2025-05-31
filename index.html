@@ -1,115 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>RK.S.S. Jagadish Ramayanam | Portfolio</title>
-<!-- Same styling from previous HTML omitted for brevity -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RK.S.S. Jagadish Ramayanam | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #eee;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    a {
+      color: #6ab7ff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #90caf9;
+      text-decoration: underline;
+    }
+    .light {
+      background-color: #fefefe;
+      color: #222;
+    }
+    .light a {
+      color: #0077cc;
+    }
+    .light a:hover, .light a:focus {
+      color: #005fa3;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background-color: #1e1e1e;
+      border-radius: 12px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.7);
+      padding: 2rem 3rem;
+      transition: background-color 0.4s ease;
+    }
+    .light .container {
+      background-color: #ffffff;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #aaa;
+    }
+    .light header p {
+      color: #555;
+    }
+    #theme-toggle {
+      background-color: transparent;
+      border: 2px solid #6ab7ff;
+      color: #6ab7ff;
+      padding: 0.4rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      float: right;
+      margin-bottom: 1rem;
+    }
+    .light #theme-toggle {
+      border-color: #0077cc;
+      color: #0077cc;
+    }
+    .light #theme-toggle:hover,
+    .light #theme-toggle:focus {
+      background-color: #0077cc;
+      color: #fff;
+    }
+    h2 {
+      border-bottom: 2px solid #6ab7ff;
+      padding-bottom: 0.3rem;
+    }
+    .light h2 {
+      border-color: #0077cc;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+    }
+    .experience-item, .project, .certification {
+      background: #2a2a2a;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+    }
+    .light .experience-item, .light .project, .light .certification {
+      background: #f1f1f1;
+    }
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      margin-right: 1rem;
+      margin-top: 0.5rem;
+    }
+    .social-links svg {
+      width: 20px;
+      height: 20px;
+      margin-right: 6px;
+      vertical-align: middle;
+      fill: currentColor;
+    }
+  </style>
 </head>
 <body>
-<div class="container">
-  <div class="toggle-container">
-    <button id="theme-toggle">Toggle Light Mode</button>
-  </div>
-  <header>
-    <h1>RK.S.S. Jagadish Ramayanam</h1>
-    <p>Cybersecurity Enthusiast | VAPT Intern | Open-Source Contributor</p>
-  </header>
+  <div class="container">
+    <header>
+      <h1>RK.S.S. Jagadish Ramayanam</h1>
+      <p>Cybersecurity Enthusiast | VAPT Intern</p>
+    </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Aspiring cybersecurity professional with a solid foundation in vulnerability assessment, penetration testing, and compliance auditing. Skilled in tools like Nmap, Burp Suite, and Nessus. Passionate about problem-solving, emerging technologies, and delivering practical security solutions. Eager to apply knowledge and grow in the cybersecurity field.</p>
-  </section>
+    <section>
+      <h2>About Me</h2>
+      <p>Cybersecurity professional with expertise in VAPT, compliance auditing, and network security. Experienced with tools like Nmap, Burp Suite, Nessus. Passionate about emerging tech and secure systems.</p>
+    </section>
 
-  <section id="education">
-    <h2>Education</h2>
-    <ul>
-      <li><strong>VIT AP, Amaravathi (2021 - Expected 2025)</strong>: B.Tech in CSE with specialization in Cyber Security | CGPA: 9</li>
-      <li><strong>Aditya Junior College, Bhimavaram (2021)</strong>: 97.20%</li>
-    </ul>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li><strong>Languages:</strong> Java, Python</li>
-      <li><strong>Cybersecurity:</strong> Incident Response, Threat Analysis, Network Security, Web Application Security, Vulnerability Assessment, Pen Testing</li>
-      <li><strong>Tools:</strong> Nmap, Burp Suite, Metasploit, Wireshark, OpenEDR, OpenVAS, OSForensics</li>
-    </ul>
-  </section>
-
-  <section id="experience">
-    <h2>Experience</h2>
-    <div class="experience-item">
-      <h3>Andhra Pradesh Technology Services – VAPT Intern</h3>
-      <p><em>May 2025 – Present</em></p>
+    <section>
+      <h2>Education</h2>
       <ul>
-        <li>Conducting VAPT for web applications and internal networks at government level.</li>
-        <li>Preparing documentation aligned with real-world auditing standards.</li>
-        <li>Collaborating on patch recommendations and mitigation strategies.</li>
+        <li><strong>VIT AP, Amaravathi</strong> – B.Tech in CSE (Cyber Security), CGPA: 9 (Expected 2025)</li>
+        <li><strong>Aditya Junior College</strong> – 97.20% (2021)</li>
       </ul>
-    </div>
-    <div class="experience-item">
-      <h3>Secure Sleuths – VAPT Intern</h3>
-      <ul>
-        <li>Tested web-based applications and resolved identified vulnerabilities.</li>
-        <li>Produced detailed reports reducing vulnerabilities by 20%.</li>
-        <li>Used Nmap, Burp Suite, Nessus for security analysis.</li>
-      </ul>
-    </div>
-  </section>
+    </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="grid-two">
+    <section>
+      <h2>Skills</h2>
+      <ul>
+        <li><strong>Languages:</strong> Java, Python</li>
+        <li><strong>Cybersecurity:</strong> IR, Threat Analysis, Pen Testing, Web Security</li>
+        <li><strong>Tools:</strong> Nmap, Burp Suite, Metasploit, Wireshark, OpenEDR, OpenVAS</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <div class="experience-item">
+        <h3>APT Services – VAPT Intern</h3>
+        <p><em>May 2025 – Present</em></p>
+        <ul>
+          <li>Performed VAPT on government systems.</li>
+          <li>Created audit reports and remediation plans.</li>
+        </ul>
+      </div>
+      <div class="experience-item">
+        <h3>Secure Sleuths – VAPT Intern</h3>
+        <p><em>August 2024 – November 2024</em></p>
+        <ul>
+          <li>Web application security testing and reporting.</li>
+          <li>Reduced vulnerabilities by 20% using Nmap, Nessus.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
       <div class="project">
         <h3>Scanhere4u</h3>
-        <p>Automated penetration testing tool for web and network assessments using Node.js and API integrations. Generates actionable security reports.</p>
+        <p>Node.js based tool for automated penetration testing and reporting.</p>
       </div>
       <div class="project">
-        <h3>OpenVPN Service on AWS</h3>
-        <p>Deployed and configured an OpenVPN server using AWS Marketplace for secure access. Implemented monitoring of user authentication and logs.</p>
+        <h3>OpenVPN on AWS</h3>
+        <p>Configured secure VPN with user monitoring on AWS Marketplace.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="achievements">
-    <h2>Achievements</h2>
-    <ul>
-      <li>2nd place – HackathonX Semi-Finals (AP & Telangana) organized by NCSRC</li>
-      <li>Represented Team PyCODE in a real-world cybersecurity challenge</li>
-    </ul>
-  </section>
+    <section>
+      <h2>Achievements</h2>
+      <ul>
+        <li>2nd place in HackathonX Semi-Finals – NCSRC Represented Team PyCODE</li>
+      </ul>
+    </section>
 
-  <section id="certifications">
-    <h2>Certifications</h2>
-    <ul>
-      <li>APIsec Certified Practitioner (ACP)</li>
-      <li>CEH Knowledge (Self-Trained)</li>
-      <li>Red Hat Certified System Administrator (RHCSA) – Training</li>
-      <li>EC-Council – Networking and Security Fundamentals</li>
-      <li>EC-Council – Vulnerability Analysis and Management Basics</li>
-      <li>EC-Council – Linux Network Administration</li>
-    </ul>
-  </section>
+    <section>
+      <h2>Certifications</h2>
+      <ul>
+        <li>APIsec Certified Practitioner</li>
+        <li>CEH Knowledge (Self-Trained)</li>
+        <li>RHCSA Training</li>
+        <li>EC-Council: Network Fundamentals, Vulnerability Analysis and Management Basics, Networking and Security Fundamentals, Linux Network Administration</li>
+      </ul>
+    </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:ramayanamjagadish@gmail.com">ramayanamjagadish@gmail.com</a></p>
-    <p>Phone: <a href="tel:+919553458347">+91 95534 58347</a></p>
-    <div class="social-links">
-      <a href="https://linkedin.com/in/ramayanam-jagadish" target="_blank">LinkedIn</a>
-      <a href="https://github.com/hii923084" target="_blank">GitHub</a>
-    </div>
-  </section>
-</div>
-<script>
-  const toggleBtn = document.getElementById('theme-toggle');
-  const body = document.body;
-  toggleBtn.addEventListener('click', () => {
-    body.classList.toggle('light');
-    toggleBtn.textContent = body.classList.contains('light') ? 'Toggle Dark Mode' : 'Toggle Light Mode';
-  });
-</script>
+    <section>
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:ramayanamjagadish@gmail.com">ramayanamjagadish@gmail.com</a></p>
+      <p>Phone: <a href="tel:+919553458347">+91 95534 58347</a></p>
+      <div class="social-links">
+        <a href="https://linkedin.com/in/ramayanam-jagadish" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4.98 3.5C3.33 3.5 2 4.84 2 6.5c0 1.65 1.33 3 2.98 3 1.64 0 3-1.35 3-3 0-1.66-1.36-3-3-3zM2 8.75h6v12H2v-12zm7.5 0h5.75v1.6h.08c.8-1.5 2.76-3.1 5.68-3.1 6.07 0 7.2 4 7.2 9.25v10.25h-6v-9.4c0-2.25-.04-5.15-3.14-5.15-3.14 0-3.62 2.44-3.62 4.96v9.6h-6v-12z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/hii923084" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.16 6.84 9.49.5.09.68-.21.68-.48 0-.24-.01-1.04-.02-1.89-2.78.6-3.37-1.34-3.37-1.34-.45-1.14-1.1-1.44-1.1-1.44-.9-.62.07-.6.07-.6 1 .07 1.53 1.04 1.53 1.04.89 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.93 0-1.09.39-1.99 1.03-2.7-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.59 9.59 0 0112 6.8c.85.004 1.7.11 2.5.32 1.9-1.3 2.74-1.02 2.74-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.7 0 3.82-2.33 4.68-4.56 4.93.36.31.68.93.68 1.88 0 1.36-.01 2.46-.01 2.79 0 .27.18.58.69.48A10.02 10.02 0 0022 12c0-5.52-4.48-10-10-10z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('light');
+      toggleBtn.textContent = body.classList.contains('light') ? 'Toggle Dark Mode' : 'Toggle Light Mode';
+    });
+  </script>
 </body>
 </html>
